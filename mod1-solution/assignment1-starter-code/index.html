@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
+      .green { color: green; }
+      .red { color: red; }
     </style>
   </head>
 <body ng-app="LunchCheck">
@@ -23,8 +25,8 @@
          <div class="form-group">
              <button class="btn btn-default" ng-click="checker()">Check If Too Much</button>
          </div>
-         <div class="form-group message">
-             {{lunchCheckResult}}
+         <div class="form-group message {{fontColor}}">
+             <p>{{lunchCheckResult}}</p>
          </div>
    </div>
 

@@ -11,20 +11,23 @@ function LunchCheckController($scope) {
     let validator = function (lunchItems) {
         console.log(lunchItems);
         if (!lunchItems) {
-            return "Please enter data first"
+            return ["Please enter data first", "red"];
         } else {
             const items = lunchItems.split(',');
             if (items.length > 3){
-                return "Too much!";
+                return ["Too much!", "green"];
             } else {
-                return "Enjoy!";
+                return ["Enjoy!", "green"];
             }
         }
     };
 
     $scope.checker = function () {
-        console.log($scope.lunchItems);
-        $scope.lunchCheckResult =  validator($scope.lunchItems)
+        var checkResults=  validator($scope.lunchItems)
+        $scope.lunchCheckResult = checkResults[0]
+        console.log(checkResults[1]);
+
+        $scope.fontColor = checkResults[1]
     };
 
 
